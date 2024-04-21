@@ -2,10 +2,12 @@
 const express = require('express');
 const router = express.Router();
 const studentsController = require('../controllers/index');
+const userController = require('../controllers/userController');
 
 // Route for getting all profiles without search
 router.get('/profiles', studentsController.getAllProfiles);
-
+router.post('/register', userController.register);
+router.post('/login', userController.login);
 // Route for searching profiles
 router.get('/profiles/search', studentsController.searchProfiles);
 router.get('/profiles/:id', studentsController.getStudent);
