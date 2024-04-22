@@ -39,6 +39,9 @@ const studentSchema = new mongoose.Schema({
   linkedinURL: {
     type: String,
   },
+   email:{
+    type:String,
+  },
 }, { timestamps: true });
 
 // Method to generate authentication token
