@@ -20,13 +20,13 @@ exports.login = async (req, res) => {
     if (!user || password !== user.password) {
       return res.status(401).send('Authentication failed');
     }
-    // const student = await Student.findOne({ email: email });
-    // if (!student) {
-    //   return res.status(404).send('No linked student profile found');
-    // }
+    const student = await Student.findOne({ email: email });
+    if (!student) {
+      return res.status(404).send('No linked student profile found');
+    }
     res.send({
       message: 'User authenticated successfully',
-      // userId: student._id 
+      userId: student._id 
       // Send this id to be used in the frontend
     });
   } catch (error) {
