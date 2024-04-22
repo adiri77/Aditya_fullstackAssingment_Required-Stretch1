@@ -1,6 +1,6 @@
 // controllers/userController.js
 const User = require('../models/User');
-const Student=require('../models/schema')
+const Student=require('../models/schema');
 
 exports.register = async (req, res) => {
   try {
